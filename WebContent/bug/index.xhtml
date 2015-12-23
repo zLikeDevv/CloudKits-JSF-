@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>CloudKits - Envie Bugs</title>
+	<h:outputStylesheet library="css" name="app.css" />
+</h:head>
+<h:body>
+	<div id="cabecalho">
+		<ul id="menu-principal">
+			<li><h:graphicImage library="imagens" name="logo.png"
+					width="150" height="70" /></li>
+			<li><h:link value="Home" outcome="/index.xhtml" /></li>
+		</ul>
+	</div>
+	<h:messages id="messages" errorClass="erros" infoClass="notice" />
+	<div id="conteudo">
+		<div id="container">
+			<h1>Reporte algum bug!</h1>
+			<h:form id="form">
+				<h:outputLabel value="Titulo Do Bug" for="titulo" />
+				<h:inputText id="titulo" value="#{bugBean.bug.sumario}"
+					label="Titulo Do Bug" required="true" styleClass="texto-longo"
+					pt:placeholder="Eh permitido adicionar bugs do site e do servidor tambem!" />
+				<h:outputLabel value="Seu NickName" for="responsavel" />
+				<h:inputText id="responsavel" value="#{bugBean.bug.responsavel}"
+					label="Seu nick no minecraft" required="true"
+					styleClass="texto-longo"
+					pt:placeholder="Adicione somente seu nick do minecraft!" />
+				<h:outputLabel value="Descricão do bug" for="descricao" />
+				<h:inputTextarea id="descricao" rows="3" styleClass="texto-longo"
+					required="true" label="Descrição do bug"
+					value="#{bugBean.bug.descricao}"
+					pt:placeholder="Não ponha reports falsos ou use isto aqui para brincadeira, caso contrario resultará em puniçao no servidor e no site!">
+					<f:validateLength maximum="2000" />
+				</h:inputTextarea>
+
+				<h:outputLabel value="Status" for="status" />
+				<h:selectOneMenu id="status" value="#{bugBean.bug.status}">
+					<f:selectItems value="#{bugBean.todosOsStatus}" var="status"
+						itemLabel="#{status}" itemValue="#{status}"></f:selectItems>
+				</h:selectOneMenu>
+				<div class="acoes-principais">
+					<h:commandButton value="Enviar" action="#{bugBean.adiciona}">
+						<f:ajax render="@form :mensagens" execute="@form"></f:ajax>
+					</h:commandButton>
+				</div>
+			</h:form>
+		</div>
+	</div>
+	<div id="rodape">
+		<div class="rodape-bar">
+			<strong>CloudKits - Home. Por LikeDevv</strong>
+		</div>
+	</div>
+</h:body>
+</html>

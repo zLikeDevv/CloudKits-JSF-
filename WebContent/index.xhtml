@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>CloudKits - Home</title>
+	<h:outputStylesheet library="css" name="app.css" />
+
+	<script>
+		function abc() {
+			alert("LikeDevv, Dono e programador do servidor!");
+		}
+	</script>
+</h:head>
+<h:body>
+	<div id="cabecalho">
+		<ul id="menu-principal">
+			<li><h:graphicImage library="imagens" name="logo.png"
+					width="150" height="70" /></li>
+			<li><h:link value="Reportar Bug" outcome="/bug/index.xhtml" /></li>
+		</ul>
+	</div>
+	<h:messages id="messages" errorClass="erros" infoClass="notice" />
+	<div id="conteudo">
+		<div id="container">
+			<fieldset id="login-form">
+				<legend>
+					<font size="5px">[24/12/2015 ATE 05-1-2016]-Recrutamento!</font>
+				</legend>
+				<h:form>
+					<h:graphicImage library="imagens" name="abc.png" width="300"
+						height="300"></h:graphicImage>
+					<h:outputLabel>Hoje começamos a recrutar staffs (Moderatores, Triais Construtores)</h:outputLabel>
+					<h:commandLink value="[DONO] LikeDevv" onclick="abc()" />
+				</h:form>
+			</fieldset>
+			<fieldset id="login-form">
+				<legend>
+					<font size="5px">[22/12/2015]-Comemoração!</font>
+				</legend>
+				<h:form>
+					<h:graphicImage library="imagens" name="bolo.jpg" width="200"
+						height="300"></h:graphicImage>
+					<h:outputLabel>Este dia foi um dia especial para a staff principal(Donos e Admins), dia 21/12/2015 começamos a criaçao de plugins, mapas e
+					 sites do nosso servidor, por isso agradeço a ajuda das outras pessoas que estao a ajudar o servidor e aquelas q vao ajudar tambem :3</h:outputLabel>
+					<h:commandLink value="[DONO] LikeDevv" onclick="abc()" />
+				</h:form>
+			</fieldset>
+		</div>
+	</div>
+	<div id="rodape">
+		<div class="rodape-bar">
+			<strong>CloudKits - Home. Por LikeDevv</strong>
+		</div>
+	</div>
+</h:body>
+</html>
